@@ -35,6 +35,7 @@ Make sure that you have Git, Rails, and Bundler installed. Clone the app locally
   * rails generate model Rating member:references rater_id:integer rating:integer{1} 
 
 ## Common user (not logged in) and member (logged in) nagivation scenarios
+```
   A user is browsing:
     /welcome/index & /welcome/info & /welcome/terms & /members/signuplogin
   A user is contacting the webmaster
@@ -51,8 +52,10 @@ Make sure that you have Git, Rails, and Bundler installed. Clone the app locally
   A member wants to delete their profile
     client: /members/:id -> /members/:id -> welcome/index
     server: members#show -> members#destroy -> welcome#index
+```
 
 ## Member and Welcome model's routes
+```
         Prefix Verb   URI Pattern                 Controller#Action
           root GET    /                           welcome#index
           info GET    /info(.:format)             welcome#info
@@ -68,6 +71,7 @@ Make sure that you have Git, Rails, and Bundler installed. Clone the app locally
            new GET    /new(.:format)              members#new
         rookie GET    /rookie(.:format)           members#rookie
    signuplogin GET    /signuplogin(.:format)      members#signuplogin
+```
 
 
 ## Frustrations, questions, and moments of confusion
