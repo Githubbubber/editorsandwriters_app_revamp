@@ -3,6 +3,9 @@ class WelcomeController < ApplicationController
   end
 
   def info
+	if @new_member
+		@member = "true"
+	end
   	render "info"
   end
 
