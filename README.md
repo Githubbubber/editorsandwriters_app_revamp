@@ -57,6 +57,10 @@ A member wants to delete their profile
   server: members#show -> members#destroy -> welcome#index
 
 ##Member routes
+      Prefix Verb   URI Pattern                 Controller#Action
+        root GET    /                           welcome#index
+        info GET    /info(.:format)             welcome#info
+       terms GET    /terms(.:format)            welcome#terms
      members GET    /members(.:format)          members#index
              POST   /members(.:format)          members#create
   new_member GET    /members/new(.:format)      members#new
@@ -65,23 +69,15 @@ A member wants to delete their profile
              PATCH  /members/:id(.:format)      members#update
              PUT    /members/:id(.:format)      members#update
              DELETE /members/:id(.:format)      members#destroy
-hr
+         new GET    /new(.:format)              members#new
+      rookie GET    /rookie(.:format)           members#rookie
+ signuplogin GET    /signuplogin(.:format)      members#signuplogin
 
-## API Reference
-NOT MEKES WRITING 
-Depending on the size of the project, if it is small and simple enough the reference docs are to be added to this README file. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-NOT MEKES WRITING 
 hr
 
 ## Frustrations, moments of confusion
 - How am I to handle the editing of key model values? Ex, since the username is unique, should I make it a primary key? Should members be able to change their username or should I make them delete their profile if they want to do that?
 - Is PostgresQL better for this app in the long run?
-hr
-
-## Tests
-NOT MEKES WRITING 
-Describe and show how to run the tests with code examples.
-NOT MEKES WRITING 
 hr
 
 ## Authors: Mekesia Brown
