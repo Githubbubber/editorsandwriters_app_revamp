@@ -5,4 +5,25 @@
 <br/>
 <br/>
 <br/>
-<h1>SEARCH</h1>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br/>
+<br/>
+
+<h1>Listing members</h1> 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+ 
+  <% @members.each do |m| %>
+    <tr>
+      <!-- <td><%= m.first_name %></td>
+      <td><%= m.email %></td> -->
+      <td><%= link_to m.first_name, member_path(m) %></td>
+    </tr>
+  <% end %>
+</table>

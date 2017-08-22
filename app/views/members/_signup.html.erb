@@ -1,0 +1,70 @@
+<!-- Sign up section -->
+	<%= form_for @member do |m|%>
+		<% if @member.errors.any? %>
+			<div class="error_messages">
+				<h2>Form is invalid</h2>
+				<ul>
+					<% for message in @member.errors.full_messages %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<%= label_tag(:acct_type, "Account type:") %><br/>
+			<%= radio_button_tag(:acct_type, "e") %> Editor &nbsp;
+			<%= radio_button_tag(:acct_type, "w") %> Writer &nbsp;
+			<%= radio_button_tag(:acct_type, "n") %> Just visiting <br/>
+
+		<p>
+			<%= m.label :first_name %><br>
+			<%= m.text_field :first_name %>
+		</p>
+		<p>
+			<%= m.label :last_name %><br>
+			<%= m.text_field :last_name %>
+		</p>
+		<p>
+			<%= m.label :alter_ego %><br>
+			<%= m.text_field :alter_ego %>
+		</p>
+		<p>
+			<%= m.label :email %><br>
+			<%= m.email_field :email %>
+		</p>
+		<p>
+			<%= m.label :password_digest %><br>
+			<%= m.text_field :password_digest %>
+		</p>
+		<p>
+			<%= m.label :tagline %><br>
+			<%= m.text_area :tagline %>
+		</p>
+		<p>
+			<%= m.label :aboutme %><br>
+			<%= m.text_field :aboutme %>
+		</p>
+		<p>
+			<%= m.label :avatar %><br>
+			<%= m.text_area :avatar %>
+		</p>
+		<p>
+			<%= m.label :location %><br>
+			<%= m.text_field :location %>
+		</p>
+		<p>
+			<%= m.label :fav_style_manual %><br>
+			<%= m.text_area :fav_style_manual %>
+		</p>
+		<p>
+			<%= m.label :education %><br>
+			<%= m.text_field :education %>
+		</p>
+		<p>
+			<%= m.label :fav_advice %><br>
+			<%= m.text_area :fav_advice %>
+		</p>
+		<p>
+			<%= m.submit %>
+		</p>
+	<% end %>
