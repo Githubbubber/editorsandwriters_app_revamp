@@ -7,22 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Member.create(
-# 	acct_type: "w",
-# 	first_name: "w3", 
-# 	last_name: "w3", 
-# 	alter_ego: "w3", 
-# 	password_digest: "w3w3w3w3", 
-# 	email: "w3@w3.com", 
-# 	tagline: "w3", 
-# 	aboutme: "w3", 
-# 	avatar: "http://w3.net/w3.jpg", 
-# 	location: "w3", 
-# 	fav_style_manual: "", 
-# 	education: "w3", 
-# 	fav_advice: "" )
-
-
     # t.string "acct_type", limit: 1
     # t.string "first_name", limit: 20
     # t.string "last_name", limit: 20

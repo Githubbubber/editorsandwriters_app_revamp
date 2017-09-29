@@ -1,35 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  acct_type: 
-  acct_type: 
-  acct_type: 
-  first_name: MyString
-  last_name: MyString
-  alter_ego: MyString
-  password_digest: MyString
-  email: MyString
-  tagline: MyString
-  aboutme: MyText
-  avatar: MyString
-  location: MyString
-  fav_style_manual: MyString
-  education: MyString
-  fav_advice: MyString
+# one:
+#   acct_type: 
+#   acct_type: 
+#   acct_type: 
+#   first_name: MyString
+#   last_name: MyString
+#   alter_ego: MyString
+#   password_digest: MyString
+#   email: MyString
+#   tagline: MyString
+#   aboutme: MyText
+#   avatar: MyString
+#   location: MyString
+#   fav_style_manual: MyString
+#   education: MyString
+#   fav_advice: MyString
 
-two:
-  acct_type: 
-  acct_type: 
-  acct_type: 
-  first_name: MyString
-  last_name: MyString
-  alter_ego: MyString
-  password_digest: MyString
-  email: MyString
-  tagline: MyString
-  aboutme: MyText
-  avatar: MyString
-  location: MyString
-  fav_style_manual: MyString
-  education: MyString
-  fav_advice: MyString
+# # two:
+# #   acct_type: 
+# #   acct_type: 
+# #   acct_type: 
+# #   first_name: MyString2
+# #   last_name: MyString2
+# #   alter_ego: MyString2
+# #   password_digest: MyString2
+# #   email: MyString2
+# #   tagline: MyString2
+# #   aboutme: MyText2
+# #   avatar: MyString2
+# #   location: MyString2
+# #   fav_style_manual: MyString2
+# #   education: MyString2
+# #   fav_advice: MyString2
