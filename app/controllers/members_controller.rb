@@ -5,8 +5,7 @@ class MembersController < ApplicationController
 	end
 
 	def create #After new info is entered, validated, and saved, sends the new member to the general info page to learn about the network
-		@new_member = Member.new(member_params)
-		@new_member.save
+		@new_member = Member.create(member_params)
 		redirect_to params[:welcome] || "http://localhost:3000/info"
 		# render "members/rookie"
 	end
