@@ -1,6 +1,6 @@
 # Editors & Writers (will be renamed upon completion)
 ***
-Editors & Writers is a professional social network of writers and editors of color in the comics industry. 
+Editors & Writers is a professional network for writers and editors of color in the comics industry. 
 
 ## Interface
 * Comic book-inspired visuals to the design
@@ -78,7 +78,7 @@ Make sure that you have Git, Rails, and Bundler installed. Clone the app locally
 - How am I to handle the editing of key model values? Ex, since the username is unique, should I make it a primary key? Should members be able to change their username or should I make them delete their profile if they want to do that?
 - Is PostgresQL better for this app in the long run?
 
-## Authors: Mekesia Brown
+## Author: Mekesia Brown
 
 ## License
 TBD
