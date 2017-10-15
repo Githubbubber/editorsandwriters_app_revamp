@@ -1,0 +1,15 @@
+<h2>Add a rating for <%= @member.alter_ego %></h2>
+<%= form_with(model: [ @member, @member.ratings.build ], local: true) do |form| %>
+	<%= form.hidden_field :rater, value: @member.alter_ego %>
+  <p>
+    <%= form.label :rank %> &nbsp; 
+    <%= form.text_field :rank %>
+  </p>
+  <p>
+    <%= form.label :rating_comment %> &nbsp; 
+    <%= form.text_area :rating_comment %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

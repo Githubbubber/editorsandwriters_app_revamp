@@ -1,0 +1,6 @@
+<% @member.ratings.each do |rating| %>
+	<p>Overall rating: <%= rating.rank %></p>
+	<p>Review: <%= rating.rating_comment %></p>
+	
+	<%= link_to 'Destroy Review', [rating.member, rating], method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
