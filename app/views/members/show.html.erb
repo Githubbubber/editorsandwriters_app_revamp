@@ -1,9 +1,26 @@
-<h1>Members Page</h1><br/>
-- Classic-themed (Archie?)
-
-<div id="videoChat">
-	<p>Video chat/IM in lower lefthand corner</p>
-</div>	
-
+<header class="row">
+	<h1>Members Page</h1>
+</header>
 <hr/>
-<%= render "member_data" %>
+<section class="container">
+	<section class="row">
+		- Classic-themed (Archie?)
+
+		<div id="videoChat">
+			<p>Video chat/IM in lower lefthand corner</p>
+		</div>	
+
+		<hr/>
+		<%= render "member_data" %>
+		<%= link_to 'Change my info', edit_member_path(@member) %>
+		<%= link_to 'Delete acct', member_path(@member), method: :delete, data: {confirm: "Are you sure?"} %>
+	</section>
+
+	<section class="row">
+		<hr/>
+		<h2>Ratings</h2> 
+		<%= render @member.ratings %>
+		<br/>
+		<%= render 'ratings/form' %>
+	</section>
+</section>

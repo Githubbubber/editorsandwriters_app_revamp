@@ -1,45 +1,68 @@
-
-<%= form_tag("members", method: "patch") do %>
-	<%= label_tag(:acct_type, "Account type:") %><br/>
-		<%= radio_button_tag(:acct_type, "e") %> Editor &nbsp;
-		<%= radio_button_tag(:acct_type, "w") %> Writer &nbsp;
-		<%= radio_button_tag(:acct_type, "n") %> Just visiting      <br/>
-
-	<%= label_tag(:first_name, "First name:") %>
-		<%= text_field_tag(:first_name, "<%= @member.first_name %>", maxlength: 20, required: "required") %>
-	<%= label_tag(:last_name, "Last name:") %>
-		<%= text_field_tag(:last_name, "<%= @member.last_name %>", maxlength: 20, required: "required") %><br/>
-	<br/>
-	<span><small>The alter ego cannot be changed</small></span>
-	<br/>
-	<%= label_tag(:email, "Email:") %>
-		<%= email_field_tag(:email, "<%= @member.email %>", minlength: 8, maxlength: 30, required: "required") %><br/>
-
-	<%= label_tag(:password_digest, "Password:") %>
-		<%= password_field_tag(:password_digest, "", minlength: 8, maxlength: 30, required: "required") %>
-	<%= label_tag(:password, "Confirm Password:") %>
-		<%= password_field_tag(:password, "", minlength: 8, maxlength: 30, required: "required") %><br/>
-
-	<%= label_tag(:tagline, "Tagline:") %>
-		<%= text_field_tag(:tagline, "") %><br/>
-
-	<%= label_tag(:aboutme, "Origin story (about me):") %>
-		<%= text_field_tag(:aboutme, "", maxlength: 300) %><br/>
-
-	<%= label_tag(:avatar, "Avatar:") %>
-		<%= text_field_tag(:avatar, "") %><br/>
-
-	<%= label_tag(:location, "Location:") %>
-		<%= text_field_tag(:location, "") %><br/>
-
-	<%= label_tag(:fav_style_manual, "Favorite style manual (Strunk and White, Chicago, etc.):") %>
-		<%= text_field_tag(:fav_style_manual, "") %><br/>
-
-	<%= label_tag(:education, "Education:") %>
-		<%= text_field_tag(:education, "") %><br/>
-
-	<%= label_tag(:fav_advice, "Favorite advice to give:") %>
-		<%= text_field_tag(:fav_advice, "") %><br/>
-	<br/>
-	<%= submit_tag("Submit your edited profile") %>
+<%= form_with(model: @member) do |form| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+		<h2>Try entering your information again because</h2>
+		<ul>
+			<% for message in @member.errors.full_messages %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+    </div>
+  <% end %>
+ 
+  <hr/>
+    <%= form.label :acct_type %>  
+    <%= form.radio_button :acct_type, "e", value: "e" %> Editor &nbsp; 
+    <%= form.radio_button :acct_type, "w", value: "w" %> Writer &nbsp; 
+    <%= form.radio_button :acct_type, "n", value: "n" %> Neither
+  <br/>
+  
+    <%= form.label :last_name %> &nbsp; 
+    <%= form.text_field :last_name, value: @member.last_name %>
+  <br/>
+  
+    <span>Sorry, the alter ego can't be changed</span>
+    <%= form.label :alter_ego %> &nbsp; 
+    <%= form.hidden_field :alter_ego, value: @member.alter_ego %>
+  <br/>
+  
+    <%= form.label :email %> &nbsp; 
+    <%= form.email_field :email, value: @member.email %>
+  <br/>
+  
+    <%= form.label :password_digest %> &nbsp; 
+    <%= form.password_field :password_digest %>
+  <br/>
+  
+    <%= form.label :tagline %> &nbsp; 
+    <%= form.text_field :tagline, value: @member.tagline %>
+  <br/>
+  
+    <%= form.label :aboutme %> &nbsp; 
+    <%= form.text_area :aboutme, value: @member.aboutme %>
+  <br/>
+  
+    <%= form.label :avatar %> &nbsp; 
+    <%= form.url_field :avatar, value: @member.avatar %>
+  <br/>
+  
+    <%= form.label :location %> &nbsp; 
+    <%= form.text_field :location, value: @member.location %>
+  <br/>
+  
+    <%= form.label :fav_style_manual %> &nbsp; 
+    <%= form.text_field :fav_style_manual, value: @member.fav_style_manual %>
+  <br/>
+  
+    <%= form.label :education %> &nbsp; 
+    <%= form.text_field :education, value: @member.education %>
+  <br/>
+  
+    <%= form.label :fav_advice %> &nbsp; 
+    <%= form.text_field :fav_advice, value: @member.fav_advice %>
+  <br/>
+    <%= form.submit %>
 <% end %>
+
+<%= link_to 'Back to your page', member_path %> or 
+<%= link_to 'Enter the Ewniverse', members_path %>
