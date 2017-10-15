@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810013306) do
+ActiveRecord::Schema.define(version: 20171014234320) do
 
   create_table "members", force: :cascade do |t|
     t.string "acct_type", limit: 1
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20170810013306) do
     t.datetime "updated_at", null: false
     t.index ["alter_ego"], name: "index_members_on_alter_ego", unique: true
     t.index ["email"], name: "index_members_on_email", unique: true
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.string "rater"
+    t.integer "rank"
+    t.integer "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "rating_comment"
+    t.index ["member_id"], name: "index_ratings_on_member_id"
   end
 
 end

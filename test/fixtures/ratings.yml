@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rater: MyString
+  rank: 1
+  member: one
+
+two:
+  rater: MyString
+  rank: 1
+  member: two

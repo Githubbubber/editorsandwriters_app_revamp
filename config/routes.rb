@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 	get '/terms', to: 'welcome#terms', as: 'terms'
 
 	#All of the members routes
-	resources :members
+	resources :members do
+		resources :ratings
+	end
 
 	get '/new', to: 'members#new', as: 'new'
 	get '/rookie', to: 'members#rookie', as: 'rookie'
