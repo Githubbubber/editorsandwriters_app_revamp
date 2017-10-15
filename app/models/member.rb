@@ -1,4 +1,5 @@
 class Member < ApplicationRecord 
+	# has_many :ratings, dependent: :destroy
 	# validates :first_name, 	presence: true,
 	# 						length: { maximum: 20 }
 	# validates :last_name, 	presence: true,
