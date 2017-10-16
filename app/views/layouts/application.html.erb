@@ -8,7 +8,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+	<body>
+		<header>
+			<div>
+				<%= link_to "E&W", root_path%>
+				<nav>
+					<ul>
+						<li><%= link_to "Home", root_path %></li>
+						<li><%= link_to "Info", info_path %></li>
+						<li><%= link_to "Terms", terms_path %></li>
+						<li><%= link_to "EWniverse", members_path %></li>
+						<% if logged_in? %>
+							<li><%= link_to "Members", members_path %></li>
+							<li>
+								<ul>
+									<li><%= link_to "Your profile", member_path %></li>
+									<li><%= link_to "Log out", logout_path, method: :delete %></li>
+								</ul>
+							</li>
+						<% end %>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<%= yield %>
+	</body>
 </html>
