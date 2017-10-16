@@ -9,6 +9,7 @@ class MembersController < ApplicationController
 		@member = Member.new(member_params)
 		if @member.save
 			@info = true
+	      	log_in @member
 			redirect_to params[:welcome] || "http://localhost:3000/info"
 			# render "members/rookie"
 		else 
@@ -25,15 +26,15 @@ class MembersController < ApplicationController
 		@member = Member.find(params[:id])
 	end
 
-	def login 
-		@member = Member.find_by(params[:alter_ego])
-		if @member.password == params[:password]
-			redirect_to params[:welcome] || "http://localhost:3000/info"
-		else
-			@member = 'null'
-			render "signuplogin"
-		end
-	end
+	# def login 
+	# 	@member = Member.find_by(params[:alter_ego])
+	# 	if @member.password == params[:password]
+	# 		redirect_to params[:welcome] || "http://localhost:3000/info"
+	# 	else
+	# 		@member = 'null'
+	# 		render "signuplogin"
+	# 	end
+	# end
 
 	def edit #Actually points to members/:id/edit
 		@member = Member.find(params[:id])
