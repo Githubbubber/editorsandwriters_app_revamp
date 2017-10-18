@@ -1,7 +1,11 @@
-<section class="row">
-	<h1>All the info you can edit and MORE!</h1>	
-</section>
+<% if !@member %>
+	<% controller.redirect_to root_path %>
+<% else %>
+	<section class="row">
+		<h1>All the info you can edit and MORE!</h1>	
+	</section>
 
-<section class="container row">
-	<%= render "edit" %>
-</section>
+	<section class="container row">
+		<%= render "edit" %>
+	</section>
+<% end %>

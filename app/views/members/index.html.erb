@@ -1,29 +1,33 @@
-1) "The Noosphere"<br/>
-- Space-themed<br/>
-- Search field<br/>
-- Featured users on top<br/>
-<br/>
-<br/>
-<br/>
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-<br/>
-<br/>
-
-<h1>Listing members</h1> 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
- 
-  <% @members.each do |m| %>
-    <tr>
-      <!-- <td><%= m.first_name %></td>
-      <td><%= m.email %></td> -->
-      <td><%= link_to m.alter_ego, member_path(m) %></td>
-    </tr>
+<% if !@member %>
+  <% controller.redirect_to root_path %>
+<% else %>
+  1) "The Noosphere"<br/>
+  - Space-themed<br/>
+  - Search field<br/>
+  - Featured users on top<br/>
+  <br/>
+  <br/>
+  <br/>
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
   <% end %>
-</table>
+  <br/>
+  <br/>
+
+  <h1>Listing members</h1> 
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+   
+    <% @members.each do |m| %>
+      <tr>
+        <!-- <td><%= m.first_name %></td>
+        <td><%= m.email %></td> -->
+        <td><%= link_to m.alter_ego, member_path(m) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
