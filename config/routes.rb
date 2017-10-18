@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
-  	get 'sessions/new'
-
-	# All of the welcome routes
 	root "welcome#index"
 
-	# get '/welcome/index', to: 'welcome#index', as: 'index'
-	# get '/welcome', to: 'welcome#index', as: 'index'
-	# get '/index', to: 'welcome#index', as: 'index'
 	get '/info', 		to: 'welcome#info', as: 'info'
 	get '/terms', 		to: 'welcome#terms', as: 'terms'
 
-	#All of the members routes
 	resources :members do
 		resources :ratings
 	end

@@ -10,13 +10,12 @@ class SessionsController < ApplicationController
 		  log_in member
       redirect_to params[:welcome] || "http://localhost:3000/info"
     else
-    	flash.now[:danger] = 'Invalid email/password combination'
-      render 'index'
+    	flash.now[:danger] = 'Invalid alter_ego/password combination'
     end
   end
 
   def destroy
-    log_out
+    log_out @member
     redirect_to root_url
   end
 end

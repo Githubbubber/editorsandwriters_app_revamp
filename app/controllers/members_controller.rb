@@ -70,7 +70,6 @@ class MembersController < ApplicationController
 				:alter_ego, 
 				:email, 
 				:password_digest, 
-				:password, 
 				:tagline, 
 				:aboutme, 
 				:avatar, 
