@@ -15,8 +15,9 @@ module SessionsHelper
 	end
 
 	# Logs out the current member.
-	def log_out
+	def log_out(member)
 		session.delete(:member_id)
 		@current_member = nil
+		member = nil
 	end
 end
