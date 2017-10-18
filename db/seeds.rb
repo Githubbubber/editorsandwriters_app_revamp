@@ -20,3 +20,19 @@
     # t.string "fav_style_manual"
     # t.string "education"
     # t.string "fav_advice", limit: 160
+    
+    # Member.create(
+    #     acct_type: 'E', 
+    #     first_name: 'Big B', 
+    #     last_name: 'Bertha', 
+    #     alter_ego: 'BiggestBertha', 
+    #     email: 'BigBertha@BigBertha.com', 
+    #     password_digest: 'BigBertha', 
+    #     tagline: 'BigBertha', 
+    #     aboutme: 'BigBertha... BigBertha BigBertha', 
+    #     avatar: 'http://www.BigBertha.net', 
+    #     location: 'BigBertha', 
+    #     fav_style_manual: 'BigBertha', 
+    #     education: 'BigBertha', 
+    #     fav_advice: 'Big Bertha proudly!'
+    # )
