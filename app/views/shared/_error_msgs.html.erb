@@ -1,0 +1,10 @@
+<% if @member.errors.any? %>
+	<div class="error_messages">
+		<h2>Try entering your information again because:</h2>
+		<ul>
+			<% for message in @member.errors.full_messages %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>

@@ -1,16 +1,6 @@
 <!-- Sign up section -->
-	<%= form_for @member do |m|%>
-		<% if @member.errors.any? %>
-			<div class="error_messages">
-				<h2>Try entering your information again because:</h2>
-				<ul>
-					<% for message in @member.errors.full_messages %>
-						<li><%= message %></li>
-					<% end %>
-				</ul>
-			</div>
-		<% end %>
-
+	<%= form_for(@member, url: signuplogin_path) do |m|%>
+      <%= render "shared/error_msgs" %>
 		<%= label_tag(:acct_type, "Account type:") %><br/>
 			<%= radio_button_tag(:acct_type, "e") %> Editor &nbsp;
 			<%= radio_button_tag(:acct_type, "w") %> Writer &nbsp;
@@ -34,11 +24,11 @@
 		</p>
 		<p>
 			<%= m.label :password %><br>
-			<%= m.text_field :password %>
+			<%= m.password_field :password %>
 		</p>
 		<p>
 			<%= m.label :password_confirmation %><br>
-			<%= m.text_field :password_confirmation %>
+			<%= m.password_field :password_confirmation %>
 		</p>
 		<p>
 			<%= m.label :tagline %><br>

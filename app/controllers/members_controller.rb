@@ -10,7 +10,8 @@ class MembersController < ApplicationController
 		if @member.save
 			@info = true
 	      	log_in @member
-			redirect_to params[:welcome] || "http://localhost:3000/info"
+			redirect_to @member
+			# redirect_to params[:welcome] || "http://localhost:3000/info"
 			# render "members/rookie"
 		else 
 			render "signuplogin"

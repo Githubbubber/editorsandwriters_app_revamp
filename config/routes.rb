@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 	get '/new', 		to: 'members#new', as: 'new'
 	get '/rookie', 		to: 'members#rookie', as: 'rookie'
 	get '/signuplogin', to: 'members#signuplogin', as: 'signuplogin'
+	post '/signuplogin',to: 'members#create', as: 'signup'
+
 end
 
 #             Prefix Verb   URI Pattern                                    Controller#Action

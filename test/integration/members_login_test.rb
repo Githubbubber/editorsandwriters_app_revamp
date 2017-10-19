@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MembersLoginTest < ActionDispatch::IntegrationTest
   test "login with invalid information" do
-    get login_path
+    get signuplogin_path
     assert_template 'sessions/new'
     post login_path, params: { session: { alter_ego: "", password: "" } }
     assert_template 'sessions/new'
