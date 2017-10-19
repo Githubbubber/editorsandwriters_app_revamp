@@ -8,6 +8,8 @@ class MemberTest < ActiveSupport::TestCase
 	        last_name: 'Bertha', 
 	        alter_ego: 'BiggestBertha', 
 	        email: 'BigBertha@BigBertha.com', 
+			password: "foobar", 
+			password_confirmation: "foobar",
 	        password_digest: 'BigBertha', 
 	        tagline: 'BigBertha', 
 	        aboutme: 'BigBertha... BigBertha BigBertha', 
@@ -64,18 +66,18 @@ class MemberTest < ActiveSupport::TestCase
 		end
 	end
 
-	test "password should be present" do
-		@member.password_digest = "     "
-		assert_not @member.valid?
-	end
-
 	test "password should not be too long" do
-		@member.password_digest = "c" * 51
+		@member.password = @member.password_confirmation = "a" * 51
 		assert_not @member.valid?
 	end
 
 	test "password should not be too short" do
-		@member.password_digest = "d" * 5
+		@member.password = @member.password_confirmation = "a" * 5
+		assert_not @member.valid?
+	end
+
+	test "password should be present (nonblank)" do
+		@member.password = @member.password_confirmation = " " * 6
 		assert_not @member.valid?
 	end
 

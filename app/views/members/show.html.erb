@@ -1,6 +1,11 @@
-<% if @member == nil %>
-  <% controller.redirect_to root_path %>
-<% else %>
+<section>
+  <p>@members: <%= @members.nil? %></p>
+  <p>@member: <%= @member.blank? %></p>
+  <p>session[:id]: <%= session[:id].nil? %></p>
+  <p>session[:member_id]: <%= session[:member_id].nil? %></p>
+  <p>session[:alter_ego]: <%= session[:alter_ego].nil? %></p>
+</section>
+<hr/> 
 	<section class="row">
 		<h1>Members Page</h1>
 	</section>
@@ -32,4 +37,3 @@
 			<%= render 'ratings/form' %>
 		</section>
 	</section>
-<% end %>

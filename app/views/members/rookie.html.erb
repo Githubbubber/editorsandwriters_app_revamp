@@ -1,6 +1,11 @@
-<% if !@member %>
-  <% controller.redirect_to root_path %>
-<% else %>
+<section>
+  <p>@members: <%= @members.nil? %></p>
+  <p>@member: <%= @member.blank? %></p>
+  <p>session[:id]: <%= session[:id].nil? %></p>
+  <p>session[:member_id]: <%= session[:member_id].nil? %></p>
+  <p>session[:alter_ego]: <%= session[:alter_ego].nil? %></p>
+</section>
+<hr/> 
   <h1>Some Info</h1><br/>
   - Marvel-themed<br/>
   - About E&W<br/>
@@ -41,4 +46,3 @@
     - Quote of the Day <br/>
     - Uploading of files to share
   </div>
-<% end %>

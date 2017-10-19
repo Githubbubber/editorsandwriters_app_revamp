@@ -1,15 +1,9 @@
+<hr/>
 <section>
   <p>@members: <%= @members.nil? %></p>
-  <p>@member: <%= @member.blank? %></p>
+  <p>@member.alter_ego: <%= @member.alter_ego.blank? %></p>
   <p>session[:id]: <%= session[:id].nil? %></p>
   <p>session[:member_id]: <%= session[:member_id].nil? %></p>
   <p>session[:alter_ego]: <%= session[:alter_ego].nil? %></p>
 </section>
 <hr/> 
-	<section class="row">
-		<h1>All the info you can edit and MORE!</h1>	
-	</section>
-
-	<section class="container row">
-		<%= render "edit" %>
-	</section>

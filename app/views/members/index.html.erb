@@ -1,6 +1,12 @@
-<% if !@member %>
-  <% controller.redirect_to root_path %>
-<% else %>
+<section>
+  <p>@members: <%= @members.nil? %></p>
+  <p>@member: <%= @member.blank? %></p>
+  <p>session[:id]: <%= session[:id].nil? %></p>
+  <p>session[:member_id]: <%= session[:member_id].nil? %></p>
+  <p>session[:alter_ego]: <%= session[:alter_ego].nil? %></p>
+</section>
+<hr/>   
+<section>
   1) "The Noosphere"<br/>
   - Space-themed<br/>
   - Search field<br/>
@@ -30,4 +36,4 @@
       </tr>
     <% end %>
   </table>
-<% end %>
+</section>
