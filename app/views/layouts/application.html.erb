@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>EW</title>
+    <title>Editors and Writers</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,23 +11,9 @@
 	<body>
 		<header>
 			<div>
-				<%= link_to "E&W", root_path%>
+				<%= link_to "8-D", root_path%>
 				<nav>
-					<ul>
-						<li><%= link_to "Home", root_path %></li>
-						<li><%= link_to "Info", info_path %></li>
-						<li><%= link_to "Terms", terms_path %></li>
-						<li><%= link_to "EWniverse", members_path %></li>
-						<% if logged_in? %>
-							<li><%= link_to "Members", members_path %></li>
-							<li>
-								<ul>
-									<li><%= link_to "Your profile", member_path %></li>
-									<li><%= link_to "Log out", logout_path, method: :delete %></li>
-								</ul>
-							</li>
-						<% end %>
-					</ul>
+					<%= render 'shared/menu' %>
 				</nav>
 			</div>
 		</header>

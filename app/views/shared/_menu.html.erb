@@ -1,0 +1,10 @@
+<%= link_to 'The EWniverse', members_path %>
+<% if member_path(current_member).nil? %>
+	<%= link_to 'Your Profile', member_path(current_member) %>
+<% end %>
+<%= link_to 'Settings', edit_member_path(@member) %>
+<%= link_to 'Log Out', logout_path, method: :delete %>
+<hr/>
+<%= link_to 'Sign Up/Log In', new_member_path %>
+<hr/>
+<%= link_to 'Delete Account', member_path(@member), method: :delete, data: {confirm: "Are you sure?"} %>

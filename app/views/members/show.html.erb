@@ -12,9 +12,6 @@
 
 			<hr/>
 			<%= render "member_data" %>
-			<%= link_to 'Log out', logout_path %>
-			<%= link_to 'Change my info', edit_member_path(@member) %>
-			<%= link_to 'Delete acct', member_path(@member), method: :delete, data: {confirm: "Are you sure?"} %>
 		</section>
 
 		<section class="row">
