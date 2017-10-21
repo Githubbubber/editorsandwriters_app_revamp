@@ -11,18 +11,11 @@
 			</div>	
 
 			<hr/>
-			<%= render "member_data" %>
+			<%= render "shared/members/member_data" %>
 		</section>
 
 		<section class="row">
 			<hr/>
-			<h2>Ratings</h2> 
-			<% if @member.ratings %>
-				<%= render @member.ratings %>
-			<% else %>
-				<p>No ratings yet</p>
-			<% end %>
-			<br/>
-			<%= render 'ratings/form' %>
+			<%= render 'shared/ratings/rating_review' %>
 		</section>
 	</section>

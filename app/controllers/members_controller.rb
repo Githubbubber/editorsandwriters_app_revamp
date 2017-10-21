@@ -44,7 +44,17 @@ class MembersController < ApplicationController
 
 	def update #After edited info is entered, validated, and saved, send the member to their member page
 		@member = Member.find(params[:id])
-		@member.update(member_params)
+		@member.update(params[:acct_type], 
+						params[:first_name], 
+						params[:last_name],  
+						params[:email], 
+						params[:tagline], 
+						params[:aboutme],
+						params[:avatar], 
+						params[:location], 
+						params[:fav_style_manual], 
+						params[:education], 
+						params[:fav_advice])
 		@members = Member.all
 		render "index"
 		# else
@@ -58,6 +68,9 @@ class MembersController < ApplicationController
 		redirect_to members_path
 	end
 
+	# def rookie
+	# end
+	
 	# def search
 	#   @member = Member.search(params[:email])
 	# end

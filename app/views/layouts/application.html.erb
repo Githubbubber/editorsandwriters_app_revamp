@@ -11,7 +11,7 @@
 	<body>
 		<header>
 			<div>
-				<%= link_to "8-D", root_path%>
+				<%= link_to "8-D", root_path%><br/>
 				<nav>
 					<%= render 'shared/menu' %>
 				</nav>
@@ -19,7 +19,6 @@
 		</header>
 
 		<%= yield %>
-      <%= render "layouts/footer" %>
-      <%= debug(params) if Rails.env.development? %>	
+      <% #render "shared/footer" %>
 	</body>
 </html>

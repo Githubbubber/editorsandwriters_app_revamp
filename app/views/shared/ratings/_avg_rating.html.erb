@@ -1,0 +1,29 @@
+<% count = 0, rating_array = [], total = 0 %>
+
+<% #Gathering all ratings and a counter %>
+	<% @member.ratings.each do |rating| %>
+		
+		<% rating_array[count] = rating.rank %>
+		<% count += 1 %>
+	<% end %>
+
+
+
+<% #Finding the average of the ratings %>
+	<% if count > 1 %>
+		<% total = rating_array[0] %>
+		<% for x in rating_array %>
+			<% total = (total + (x + 1)) / 2 %>
+		<% end %>
+		<p>Overall rating: <%= total %></p>
+	<% else %>
+		<p>Overall rating: <%= rating_array[0] %></p>
+	<% end %>
+
+
+
+<% #Reviews to be listed %>
+	<% @member.ratings.each do |rating| %>
+		Review(s): <%= rating.rating_comment %> <br/>
+		<%= link_to 'Destroy Review', [rating.member, rating], method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>

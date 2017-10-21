@@ -8,30 +8,42 @@
 			<% end %>
 		</ul>
     </div>
-  <% end %>
- 
+  <% end %> 
+
   <hr/>
-    <%= form.label :acct_type %>  
-    <%= form.radio_button :acct_type, "e", value: "e" %> Editor &nbsp; 
-    <%= form.radio_button :acct_type, "w", value: "w" %> Writer &nbsp; 
-    <%= form.radio_button :acct_type, "n", value: "n" %> Neither
+    <%= form.label :acct_type %> &nbsp; 
+    <% case @member.acct_type %>
+    <% when "e" %>
+      <span>Currently: </span> <%= form.radio_button :acct_type, "e", value: "e", checked: true %> Editor &nbsp; 
+      <%= form.radio_button :acct_type, "w", value: "w" %> Writer &nbsp; 
+      <%= form.radio_button :acct_type, "n", value: "n" %> Neither, just browsing 
+      <br/>
+    <% when "w" %>
+      <span>Currently: </span> <%= form.radio_button :acct_type, "w", value: "w", checked: true %> Writer &nbsp; 
+      <%= form.radio_button :acct_type, "e", value: "e" %> Editor &nbsp; 
+      <%= form.radio_button :acct_type, "n", value: "n" %> Neither, just browsing
+      <br/>
+    <% else %>
+      <span>Currently: </span> <%= form.radio_button :acct_type, "n", value: "n", checked: true %> Neither, just browsing &nbsp; 
+      <%= form.radio_button :acct_type, "e", value: "e" %> Editor &nbsp; 
+      <%= form.radio_button :acct_type, "w", value: "w" %> Writer
+      <br/>
+    <% end %>
+  <br/>
+  
+    <%= form.label :first_name %> &nbsp; 
+    <%= form.text_field :first_name, value: @member.first_name %>
   <br/>
   
     <%= form.label :last_name %> &nbsp; 
     <%= form.text_field :last_name, value: @member.last_name %>
   <br/>
   
-    <span>Sorry, the alter ego can't be changed</span>
-    <%= form.label :alter_ego %> &nbsp; 
-    <%= form.hidden_field :alter_ego, value: @member.alter_ego %>
+    <span>Sorry, the alter ego and password, can't be changed yet</span>
   <br/>
   
     <%= form.label :email %> &nbsp; 
-    <%= form.email_field :email, value: @member.email %>
-  <br/>
-  
-    <%= form.label :password_digest %> &nbsp; 
-    <%= form.password_field :password_digest %>
+    <%= form.text_field :email, value: @member.email %>
   <br/>
   
     <%= form.label :tagline %> &nbsp; 

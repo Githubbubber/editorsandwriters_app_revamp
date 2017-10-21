@@ -1,10 +1,19 @@
-<%= link_to 'The EWniverse', members_path %>
-<% if member_path(current_member).nil? %>
-	<%= link_to 'Your Profile', member_path(current_member) %>
+<nav>
+	<ul>
+		<li><%= link_to 'Sign Up/Log In', new_member_path %></li>
+		<li><%= link_to 'Info', info_path %></li>
+		<li><%= link_to 'Terms & Conditions', terms_path %></li>
+	</ul>
+</nav>
+
+<% unless @member.nil? || @member.alter_ego.nil? %>
+	<nav>
+		<ul>
+			<li><%= link_to 'The EWniverse', members_path %></li>
+			<li><%= link_to 'Rookie page', rookie_path %></li>
+			<li><%= link_to 'Settings', edit_member_path(@member) %></li>
+			<li><%= link_to 'Log Out', logout_path, method: :get %></li>
+			<li><%= link_to 'Delete Account', member_path(@member), method: :delete, data: {confirm: "Are you sure?"} %></li>
+		</ul>
+	</nav>
 <% end %>
-<%= link_to 'Settings', edit_member_path(@member) %>
-<%= link_to 'Log Out', logout_path, method: :delete %>
-<hr/>
-<%= link_to 'Sign Up/Log In', new_member_path %>
-<hr/>
-<%= link_to 'Delete Account', member_path(@member), method: :delete, data: {confirm: "Are you sure?"} %>

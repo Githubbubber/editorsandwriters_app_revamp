@@ -6,7 +6,7 @@ module SessionsHelper
 
 	# Returns the current logged-in member (if any).
 	def current_member
-		@current_member ||= Member.find_by(id: session[:member_id])
+		current_member ||= Member.find_by(id: session[:member_id])
 	end
 
 	# Returns true if the member is logged in, false otherwise.
@@ -17,7 +17,7 @@ module SessionsHelper
 	# Logs out the current member.
 	def log_out(member)
 		session.delete(:member_id)
-		@current_member = nil
+		current_member = nil
 		member = nil
 	end
 end

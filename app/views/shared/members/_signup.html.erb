@@ -1,10 +1,13 @@
 <!-- Sign up section -->
 	<%= form_for(@member, url: signuplogin_path) do |m|%>
-      <%= render "shared/error_msgs" %>
-		<%= label_tag(:acct_type, "Account type:") %><br/>
-			<%= radio_button_tag(:acct_type, "e") %> Editor &nbsp;
-			<%= radio_button_tag(:acct_type, "w") %> Writer &nbsp;
-			<%= radio_button_tag(:acct_type, "n") %> Just visiting <br/>
+      	<%= render "shared/error_msgs" %>
+      	
+      	<p>
+			<%= m.label :acct_type %><br/>
+			<%= m.radio_button :acct_type, "e" %> Editor &nbsp;
+			<%= m.radio_button :acct_type, "w" %> Writer &nbsp;
+			<%= m.radio_button :acct_type, "n" %> Just visiting <br/>
+		</p>
 
 		<p>
 			<%= m.label :first_name %><br>
@@ -40,7 +43,7 @@
 		</p>
 		<p>
 			<%= m.label :avatar %><br>
-			<%= m.text_area :avatar %>
+			<%= m.url_field :avatar %>
 		</p>
 		<p>
 			<%= m.label :location %><br>

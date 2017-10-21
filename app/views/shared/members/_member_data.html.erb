@@ -1,4 +1,4 @@
-Acct type - <%= @member.acct_type %> <a href="#" title="acct_type" onclick="editInfo();">edit</a> <br/>
+Acct type - <%= @member.acct_type %> <br/>
 
 Alter ego - <%= @member.alter_ego %> <br/>
 
@@ -23,10 +23,15 @@ Member name: <%= @member.first_name %>
 			[USER CHOOSES TO SHOW THIS OR NOT] <br/>
 
 Origin story - <%= @member.aboutme %> <br/>
-
-Ratings widget<br/>
-
-Reviews
+<br/>
+<strong>Ratings</strong> 
+<% if @member.ratings %>
+	<% #render "shared/ratings/avg_rating" %>
+	Hello!
+<% else %>
+	<p>No ratings yet</p>
+<% end %>
+<br/>
 <hr/>
 Presentation box: slideshow of 12-15 seconds goes here <br/>
 
