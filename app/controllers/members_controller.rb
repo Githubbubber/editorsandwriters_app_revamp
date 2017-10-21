@@ -44,17 +44,7 @@ class MembersController < ApplicationController
 
 	def update #After edited info is entered, validated, and saved, send the member to their member page
 		@member = Member.find(params[:id])
-		@member.update(params[:acct_type], 
-						params[:first_name], 
-						params[:last_name],  
-						params[:email], 
-						params[:tagline], 
-						params[:aboutme],
-						params[:avatar], 
-						params[:location], 
-						params[:fav_style_manual], 
-						params[:education], 
-						params[:fav_advice])
+		@member.update(edited_member_params)
 		@members = Member.all
 		render "index"
 		# else
@@ -93,4 +83,19 @@ class MembersController < ApplicationController
 				:education, 
 				:fav_advice)
 		end
+
+		def edited_member_params
+			params.require(:member).permit(
+				:acct_type, 
+				:first_name, 
+				:last_name, 
+				:email, 
+				:tagline, 
+				:aboutme, 
+				:avatar, 
+				:location, 
+				:fav_style_manual, 
+				:education, 
+				:fav_advice)
+		end	
 end

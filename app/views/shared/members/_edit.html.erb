@@ -1,15 +1,5 @@
-<%= form_with(model: @member) do |form| %>
-  <% if @member.errors.any? %>
-    <div id="error_explanation">
-		<h2>Try entering your information again because</h2>
-		<ul>
-			<% for message in @member.errors.full_messages %>
-				<li><%= message %></li>
-			<% end %>
-		</ul>
-    </div>
-  <% end %> 
-
+<%= form_with(model: @member) do |form| %> 
+  <%= render "shared/error_msgs" %>
   <hr/>
     <%= form.label :acct_type %> &nbsp; 
     <% case @member.acct_type %>
