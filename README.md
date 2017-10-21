@@ -83,6 +83,10 @@ Make sure that you have Git, Rails, and Bundler installed. Clone the app locally
 ## License
 TBD
 
+## References
+- http://guides.rubyonrails.org/getting_started.html
+- https://www.railstutorial.org/book/basic_login
+
 ## README info to be added:
 Document whatever steps are necessary to get the application up and running.
 Things you may want to cover:
