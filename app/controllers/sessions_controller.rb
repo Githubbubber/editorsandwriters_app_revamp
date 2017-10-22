@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
     	flash.now[:danger] = 'Invalid alter_ego/password combination'
       render "members/signuplogin"
     end
-    render "welcome/index"
   end
 
   def destroy

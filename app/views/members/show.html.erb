@@ -1,21 +1,23 @@
- 	<section class="row">
-		<h1>Members Page</h1>
+<hr/>
+<% provide(:title, "Your profile") %>
+<section class="row">
+	<h1>Members Page</h1>
+</section>
+<hr/>
+<section class="container">
+	<section class="row">
+		- Classic-themed (Archie?)
+
+		<div id="videoChat">
+			<p>Video chat/IM in lower lefthand corner</p>
+		</div>	
+
+		<hr/>
+		<%= render "shared/members/member_data" %>
 	</section>
-	<hr/>
-	<section class="container">
-		<section class="row">
-			- Classic-themed (Archie?)
 
-			<div id="videoChat">
-				<p>Video chat/IM in lower lefthand corner</p>
-			</div>	
-
-			<hr/>
-			<%= render "shared/members/member_data" %>
-		</section>
-
-		<section class="row">
-			<hr/>
-			<%= render 'shared/ratings/rating_review' %>
-		</section>
+	<section class="row">
+		<hr/>
+		<%= render 'shared/ratings/rating_review' %>
 	</section>
+</section>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Editors and Writers</title>
-    <%= csrf_meta_tags %>
+	<title><%= yield(:title) %></title>
 
+	<%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
 	<body>
 		<header>
-			<div>
+			<div style="border: 1px solid green;">
 				<%= link_to "8-D", root_path%><br/>
 				<nav>
 					<%= render 'shared/menu' %>
