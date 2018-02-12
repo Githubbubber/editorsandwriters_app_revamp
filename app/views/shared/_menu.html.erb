@@ -1,12 +1,32 @@
-<nav>
-	<ul>
-		<li><%= link_to 'Sign Up/Log In', new_member_path %></li>
-		<li><%= link_to 'Info', info_path %></li>
-		<li><%= link_to 'Terms & Conditions', terms_path %></li>
-	</ul>
-</nav>
+<header class="navbar-wrapper container">
+    <nav class="right hide-on-small-only grey darken-2" role="navigation">
+      <div class="nav-wrapper container">
+        <ul class="right hide-on-med-and-down">
+          <% if session[:alter_ego] %>
+            <li class="logoutClick white-text"><%= link_to "Log Out", "logout" %></li>
+          <% else %>
+            <li class="signUpClick white-text"><%= link_to 'Sign Up', new_member_path %></li> 
+            <li class="loginClick white-text"><%= link_to 'Log in', new_member_path %></li>
+			<li><%= link_to 'Info', info_path %></li>
+			<li><%= link_to 'Terms & Conditions', terms_path %></li>
+          <% end %>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <% if session[:alter_ego] %>
+            <li class="logoutClick white-text"><%= link_to "Log Out", "logout" %></li>
+          <% else %>
+            <li class="signUpClick white-text"><a>Sign Up</a></li>
+            <li class="loginClick white-text"><a>Log In</a></li>
+			<li><%= link_to 'Info', info_path %></li>
+			<li><%= link_to 'Terms & Conditions', terms_path %></li>
+          <% end %>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </header>
 
-<% unless @member.nil? || @member.alter_ego.nil? %>
+  <% unless @member.nil? || @member.alter_ego.nil? %>
 	<nav>
 		<ul>
 			<li><%= link_to 'The EWniverse', members_path %></li>

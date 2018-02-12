@@ -1,3 +1,30 @@
-<footer>
-	hi
+<footer class="page-footer grey darken-2">
+<div class="container">
+  <div class="row">
+    <div class="col l6 s6">
+      <nav class="grey darken-2">
+        <ul class="white-text">
+          <li class="footer-list"><%= link_to "How this works", info_path %></li>
+          <li class="footer-list"><%= link_to "EAW origin story", info_path %></li>
+        </ul>
+      </nav>
+    </div>
+    <nav class="col l5 s4 offset-s1 grey darken-2">
+      <ul class="white-text">
+        <% if session[:alter_ego] %>
+          <li class="footer-list"><%= link_to "Log out", "logout" %></li>
+        <% else %>
+        <li><a class="footer-list signUpClick">Sign up</a> or <a class="footer-list loginClick">Log in</a></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="footer-copyright">
+  <div class="container">
+    <small>
+      A <%= link_to "Mekesia Brown", "http://mekesportfolio.batcave.net" %> web project, donated to the comics community with love. 
+    </small>
+  </div>
+</div>
 </footer>
